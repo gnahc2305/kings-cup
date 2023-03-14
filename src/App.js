@@ -4,22 +4,42 @@ function App() {
     signs: ["spades", "clubs", "diamonds", "hearts"],
   };
 
-  function drawCard() {
-    const randomNumber = Math.floor(Math.random() * cards.numbers.length);
-    console.log(cards.numbers[randomNumber]);
+  let usedCards = [];
 
-    const randomSign = Math.floor(Math.random() * cards.signs.length);
-    console.log(cards.signs[randomSign]);
+  function drawCard() {
+    const rNumber = Math.floor(Math.random() * cards.numbers.length);
+    let randomNumber = cards.numbers[rNumber]
+
+    const rSign = Math.floor(Math.random() * cards.signs.length);
+    let randomSign = cards.signs[rSign]
+
+    let card = randomNumber + randomSign;
+
+    if (usedCards.length === 52) {
+      console.log('game ended');
+      return
+    }
+
+    if (usedCards.includes(card)) {
+      drawCard();
+    } else {
+      usedCards.push(card);
+      console.log(card);
+    }
 
   }
 
-  drawCard();
+  // drawCard();
 
   return (
     <div className="">
-      {/* <button className="text-3xl font-bold ml-[50%] mt-[50%] bg-blue-800 rounded-sm p-1">
+      <button onClick={() => console.log(usedCards)}>
+        usedCards
+      </button>
+
+      <button className="text-3xl font-bold ml-[50%] mt-[50%] bg-blue-800 rounded-sm p-1" onClick={drawCard}>
         PLAY
-      </button> */}
+      </button>
     </div>
   );
 }
