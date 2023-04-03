@@ -1,3 +1,5 @@
+import {cardsValue} from './constants/information';
+
 function App() {
   const cards = {
     numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
@@ -25,11 +27,9 @@ function App() {
     } else {
       usedCards.push(card);
       console.log(card);
+      console.log(cardsValue[randomNumber]);
     }
-
   }
-
-  // drawCard();
 
   return (
     <div className="">

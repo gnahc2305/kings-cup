@@ -1,4 +1,4 @@
-let cardsValue = {
+export const cardsValue = {
     1: 'Waterfall',
     2: 'You',
     3: 'Me',
