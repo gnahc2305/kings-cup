@@ -3,8 +3,8 @@ import Card from "./components/Card";
 import { useState } from "react";
 
 function App() {
-  const [randomNumber, setRandomNumber] = useState(undefined);
-  const [challenge, setChallenge] = useState(undefined);
+  const [randomNumber, setRandomNumber] = useState();
+  const [challenge, setChallenge] = useState();
 
   const cards = {
     numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
@@ -15,26 +15,27 @@ function App() {
 
   function drawCard() {
     const rNumber = Math.floor(Math.random() * cards.numbers.length);
-    let sss = cards.numbers[rNumber];
-    setRandomNumber(sss);
+    setRandomNumber(cards.numbers[rNumber - 1]);
 
     const rSign = Math.floor(Math.random() * cards.signs.length);
     let randomSign = cards.signs[rSign];
 
-    let card = randomNumber + randomSign;
+    let card = rNumber + randomSign;
 
-    if (usedCards.length === 52) {
-      alert("game ended");
-      return;
-    }
-
+    // check if card has already been chosen
     if (usedCards.includes(card)) {
       drawCard();
     } else {
-      usedCards.push(card);
+      setChallenge(cardsValue[rNumber]);
       console.log(card);
-      console.log(cardsValue[randomNumber]);
-      setChallenge(cardsValue[randomNumber]);
+      usedCards.push(card);
+      console.log(cardsValue[rNumber]);
+    }
+
+    // if all 52 cards have been seleced the game ends
+    if (usedCards.length === 52) {
+      alert("game ended");
+      return;
     }
   }
 
