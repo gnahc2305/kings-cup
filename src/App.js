@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function App() {
   const [randomNumber, setRandomNumber] = useState();
+  const [cardSign, setCardSign] = useState()
   const [challenge, setChallenge] = useState();
   const [usedCards] = useState([]);
 
@@ -27,6 +28,7 @@ function App() {
       drawCard();
     } else {
       setChallenge(cardsValue[rNumber]);
+      setCardSign(randomSign);
       console.log(card);
       usedCards.push(card);
       console.log(cardsValue[rNumber]);
@@ -50,7 +52,7 @@ function App() {
         PLAY
       </button>
 
-      <Card cardNumber={randomNumber} challenge={challenge} />
+      <Card cardNumber={randomNumber} challenge={challenge} cardSign={cardSign} />
     </div>
   );
 }
