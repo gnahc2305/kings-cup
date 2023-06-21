@@ -5,18 +5,16 @@ import { useState } from "react";
 function App() {
   const [randomNumber, setRandomNumber] = useState();
   const [challenge, setChallenge] = useState();
-  const [usedCards, setUsedCards] = useState([]);
+  const [usedCards] = useState([]);
 
   const cards = {
     numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
     signs: ["spades", "clubs", "diamonds", "hearts"],
   };
 
-  // let usedCards = [];
-  
   function drawCard() {
-
-    const rNumber = Math.floor(Math.random() * cards.numbers.length);
+    const rNumber = Math.floor(Math.random() * cards.numbers.length) + 1;
+    // console.log(rNumber);
     setRandomNumber(cards.numbers[rNumber - 1]);
 
     const rSign = Math.floor(Math.random() * cards.signs.length);
@@ -27,19 +25,19 @@ function App() {
     // check if card has already been chosen
     if (usedCards.includes(card)) {
       drawCard();
+    } else {
+      setChallenge(cardsValue[rNumber]);
+      console.log(card);
+      usedCards.push(card);
+      console.log(cardsValue[rNumber]);
     }
-
-    setChallenge(cardsValue[rNumber]);
-    console.log(card);
-    usedCards.push(card);
-    console.log(cardsValue[rNumber]);
-
+    
     // if all 52 cards have been seleced the game ends
     if (usedCards.length === 52) {
-      alert("game ended");
-      return;
+      console.log('Game Ended');
     }
   }
+  
 
   return (
     <div className="">
