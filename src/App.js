@@ -1,6 +1,7 @@
 import { cardsValue } from "./constants/information";
 import Card from "./components/Card";
 import { useState } from "react";
+import Challenge from "./components/Challenge";
 
 function App() {
   const [randomNumber, setRandomNumber] = useState();
@@ -57,9 +58,12 @@ function App() {
       <div className="flex justify-center mt-[70px]">
         <Card
           cardNumber={randomNumber}
-          challenge={challenge}
           cardSign={cardSign}
         />
+      </div>
+
+      <div>
+        <Challenge challenge={challenge} />
       </div>
     </div>
   );
