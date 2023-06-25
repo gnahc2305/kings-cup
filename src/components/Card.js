@@ -2,7 +2,7 @@ import React from 'react'
 
 function Card({cardNumber, challenge, cardSign}) {
   return (
-    <div className='h-[350px] w-[250px] bg-white rounded-sm'>
+    <div className='h-[350px] w-[250px] bg-white rounded-xl'>
       <p className='text-[50px] text-red-900'>
         {cardNumber} {cardSign}
       </p>
