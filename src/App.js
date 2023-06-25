@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function App() {
   const [randomNumber, setRandomNumber] = useState();
-  const [cardSign, setCardSign] = useState()
+  const [cardSign, setCardSign] = useState();
   const [challenge, setChallenge] = useState();
   const [usedCards] = useState([]);
 
@@ -15,7 +15,6 @@ function App() {
 
   function drawCard() {
     const rNumber = Math.floor(Math.random() * cards.numbers.length) + 1;
-    // console.log(rNumber);
     setRandomNumber(cards.numbers[rNumber - 1]);
 
     const rSign = Math.floor(Math.random() * cards.signs.length);
@@ -29,21 +28,25 @@ function App() {
     } else {
       setChallenge(cardsValue[rNumber]);
       setCardSign(randomSign);
-      console.log(card);
       usedCards.push(card);
-      console.log(cardsValue[rNumber]);
+      // console.log(card);
+      // console.log(cardsValue[rNumber]);
     }
-    
+
     // if all 52 cards have been seleced the game ends
     if (usedCards.length === 52) {
-      console.log('Game Ended');
+      console.log("Game Ended");
     }
   }
-  
 
   return (
     <div className="">
-      <button onClick={() => console.log(usedCards)}>usedCards</button>
+      <div className="text-center">
+        <h1 className=" text-5xl mt-3"> King's Cup</h1>
+        <p className=" text-2xl m-3">Drinking Game</p>
+      </div>
+
+      {/* <button onClick={() => console.log(usedCards)}>usedCards</button> */}
 
       <button
         className="text-3xl font-bold ml-[50%] mt-[50%] bg-blue-800 rounded-sm p-1"
@@ -52,7 +55,11 @@ function App() {
         PLAY
       </button>
 
-      <Card cardNumber={randomNumber} challenge={challenge} cardSign={cardSign} />
+      <Card
+        cardNumber={randomNumber}
+        challenge={challenge}
+        cardSign={cardSign}
+      />
     </div>
   );
 }
