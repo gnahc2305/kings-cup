@@ -49,7 +49,7 @@ function App() {
 
       <div className="mt-[70px] text-center">
         <button
-          className="text-3xl font-boldrounded-sm p-1 bg-red-700 rounded-md text-white"
+          className="text-3xl font-boldrounded-sm p-2 bg-red-700 rounded-md text-white"
           onClick={drawCard}
         >
           PLAY
@@ -62,7 +62,9 @@ function App() {
 
       <Challenge challenge={challenge} desc={desc} />
 
-      <footer className="fixed bottom-0 left-0 right-0 text-center p-4 text-lg"><a href="https://github.com/gnahc2305">Andres Chang</a></footer>
+      <footer className="fixed bottom-0 left-0 right-0 text-center p-4 text-lg">
+        <a href="https://github.com/gnahc2305" target="_blank" rel="noreferrer">Andres Chang</a>
+      </footer>
     </div>
   );
 }
