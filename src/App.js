@@ -50,21 +50,19 @@ function App() {
       {/* <button onClick={() => console.log(usedCards)}>usedCards</button> */}
 
       <div className="mt-[70px] text-center">
-        <button className="text-3xl font-boldrounded-sm p-1 bg-red-700 rounded-md" onClick={drawCard}>
+        <button
+          className="text-3xl font-boldrounded-sm p-1 bg-red-700 rounded-md"
+          onClick={drawCard}
+        >
           PLAY
         </button>
       </div>
 
       <div className="flex justify-center mt-[70px]">
-        <Card
-          cardNumber={randomNumber}
-          cardSign={cardSign}
-        />
+        <Card cardNumber={randomNumber} cardSign={cardSign} />
       </div>
 
-      <div>
-        <Challenge challenge={challenge} />
-      </div>
+      <Challenge challenge={challenge} />
     </div>
   );
 }
