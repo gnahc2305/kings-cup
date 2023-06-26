@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/kings-cup/static/css/main.1effe8c3.css",
+    "main.js": "/kings-cup/static/js/main.d9c67c47.js",
+    "static/media/diamond.png": "/kings-cup/static/media/diamond.99a43ea928160bd215b7.png",
+    "static/media/heart.png": "/kings-cup/static/media/heart.59848f4811a23aa759c3.png",
+    "static/media/club.png": "/kings-cup/static/media/club.45a0b07448655d2508cf.png",
+    "index.html": "/kings-cup/index.html",
+    "main.1effe8c3.css.map": "/kings-cup/static/css/main.1effe8c3.css.map",
+    "main.d9c67c47.js.map": "/kings-cup/static/js/main.d9c67c47.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1effe8c3.css",
+    "static/js/main.d9c67c47.js"
+  ]
+}
