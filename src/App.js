@@ -1,4 +1,4 @@
-import { cardsValue } from "./constants/information";
+import { cardsValue, cardsDescription } from "./constants/information";
 import Card from "./components/Card";
 import { useState } from "react";
 import Challenge from "./components/Challenge";
@@ -7,6 +7,7 @@ function App() {
   const [randomNumber, setRandomNumber] = useState();
   const [cardSign, setCardSign] = useState();
   const [challenge, setChallenge] = useState();
+  const [desc, setDesc] = useState();
   const [usedCards] = useState([]);
 
   const cards = {
@@ -28,16 +29,15 @@ function App() {
       drawCard();
     } else {
       setChallenge(cardsValue[rNumber]);
+      setDesc(cardsDescription[rNumber]);
       setCardSign(randomSign);
       usedCards.push(card);
-      // console.log(card);
-      // console.log(cardsValue[rNumber]);
     }
-
-    // if all 52 cards have been seleced the game ends
-    if (usedCards.length === 52) {
-      console.log("Game Ended");
-    }
+  }
+  // if all 52 cards have been seleced the game ends
+  if (usedCards.length === 52) {
+    console.log("Game Ended");
+    alert("Game ended");
   }
 
   return (
@@ -46,8 +46,6 @@ function App() {
         <h1 className=" text-5xl mt-3"> King's Cup</h1>
         <p className=" text-2xl m-3">Drinking Game</p>
       </div>
-
-      {/* <button onClick={() => console.log(usedCards)}>usedCards</button> */}
 
       <div className="mt-[70px] text-center">
         <button
@@ -62,7 +60,7 @@ function App() {
         <Card cardNumber={randomNumber} cardSign={cardSign} />
       </div>
 
-      <Challenge challenge={challenge} />
+      <Challenge challenge={challenge} desc={desc} />
     </div>
   );
 }
