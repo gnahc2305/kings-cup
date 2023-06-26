@@ -41,7 +41,7 @@ function App() {
   }
 
   return (
-    <div className="">
+    <div className="h-screen">
       <div className="text-center">
         <h1 className=" text-5xl mt-3"> King's Cup</h1>
         <p className=" text-2xl m-3">Drinking Game</p>
@@ -49,7 +49,7 @@ function App() {
 
       <div className="mt-[70px] text-center">
         <button
-          className="text-3xl font-boldrounded-sm p-1 bg-red-700 rounded-md"
+          className="text-3xl font-boldrounded-sm p-1 bg-red-700 rounded-md text-white"
           onClick={drawCard}
         >
           PLAY
@@ -61,6 +61,8 @@ function App() {
       </div>
 
       <Challenge challenge={challenge} desc={desc} />
+
+      <footer className="fixed bottom-0 left-0 right-0 text-center p-4 text-lg"><a href="https://github.com/gnahc2305">Andres Chang</a></footer>
     </div>
   );
 }
